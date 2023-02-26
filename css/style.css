@@ -1,0 +1,219 @@
+@font-face {
+  font-family: "HankenGrotesk";
+  src: local("HankenGrotesk"), url("/assets/fonts/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
+  font-weight: 500 800;
+}
+
+:root {
+  --result-gradient-1: hsl(252deg 100% 67%);
+  --result-gradient-2: hsl(241deg 81% 54%);
+  --result-gradient-3: hsl(256deg 72% 46% / 1);
+  --result-gradient-4: hsl(241deg 72% 46% / 0);
+
+  --color-white: hsl(0 0% 100%);
+  --color-pale-blue: hsl(221deg 100% 96%);
+  --color-light-lavender: hsl(241deg 100% 89%);
+  --color-dark-gray-blue: hsl(224deg 30% 27%);
+
+  --color-light-red: hsl(0deg 100% 67%);
+  --bg-light-red: hsl(0deg 100% 95%);
+  --color-orangey-yellow: hsl(39deg 100% 56%);
+  --bg-orangey-yellow: hsl(39deg 100% 95%);
+  --color-green-teal: hsl(166deg 100% 37%);
+  --bg-green-teal: hsl(166deg 100% 95%);
+  --color-cobalt-blue: hsl(234deg 85% 45%);
+  --bg-cobalt-blue: hsl(234deg 85% 95%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-pale-blue);
+  font-family: HankenGrotesk, sans-serif;
+  font-size: 16px;
+  font-variation-settings: 'wght' 500;
+  margin: 0;
+}
+
+.page {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.result-summary {
+  background: var(--color-white);
+  inline-size: 100%;
+}
+
+.result {
+  align-items: center;
+  background: linear-gradient(to bottom, var(--result-gradient-1), var(--result-gradient-2));
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  inline-size: 100%;
+  padding-block: 20px;
+}
+
+.result-heading {
+  color: var(--color-light-lavender);
+  font-size: 18px;
+  font-weight: 700;
+  margin-block-start: 0;
+}
+
+.result-outcome {
+  align-items: center;
+  aspect-ratio: 1;
+  background: linear-gradient(to bottom, var(--result-gradient-3), var(--result-gradient-4));
+  block-size: 140px;
+  border-radius: 50%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.result-outcome__number {
+  color: var(--color-white);
+  display: block;
+  font-size: 56px;
+  font-variation-settings: 'wght' 800;
+}
+
+.result-outcome__range {
+  color: var(--color-light-lavender);
+  display: block;
+  font-size: 16px;
+  font-variation-settings: 'wght' 700;
+}
+
+.result-text {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.result-text__heading {
+  color: var(--color-white);
+  font-size: 24px;
+  font-variation-settings: 'wght' 700;
+  margin-block-end: 0.5em;
+}
+
+.result-text__par {
+  color: var(--color-light-lavender);
+  font-size: 16px;
+  padding-inline: 54px;
+  text-align: center;
+}
+
+.summary {
+  padding-inline: 32px;
+  inline-size: 100%;
+}
+
+.summary-heading {
+  color: var(--color-dark-gray-blue);
+  font-size: 18px;
+  font-variation-settings: 'wght' 700;
+  margin-block: 24px;
+}
+
+.summary-list {
+  display: flex;
+  row-gap: 16px;
+  flex-flow: column;
+  margin-block: 0;
+}
+
+.summary-list div {
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-list :is(dt, dd) {
+  align-items: center;
+  column-gap: 12px;
+  display: flex;
+  margin: 0;
+  padding: 1rem;
+}
+
+.summary-list .reaction {
+  background: var(--bg-light-red);
+  color: var(--color-light-red);
+}
+
+.summary-list .memory {
+  background: var(--bg-orangey-yellow);
+  color: var(--color-orangey-yellow);
+}
+
+.summary-list .verbal {
+  background: var(--bg-green-teal);
+  color: var(--color-green-teal);
+}
+
+.summary-list .visual {
+  background: var(--bg-cobalt-blue);
+  color: var(--color-cobalt-blue);
+}
+
+.summary-list dd {
+  color: var(--color-dark-gray-blue);
+  font-variation-settings: 'wght' 700;
+}
+
+.summary-list .range {
+  opacity: 0.5;
+}
+
+.summary-button {
+  background: var(--color-dark-gray-blue);
+  border: none;
+  border-radius: 128px;
+  color: var(--color-white);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+  inline-size: 100%;
+  margin-block: 24px;
+  padding-block: 17px 16px;
+}
+
+.summary-button:hover {
+  background: linear-gradient(to bottom, var(--result-gradient-1), var(--result-gradient-2));
+}
+
+
+@media (min-width: 736px) {
+
+  body {
+    font-size: 18px;
+  }
+  .result-summary {
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    max-inline-size: max-content;
+  }
+
+  .result {
+    border-radius: 32px;
+    max-inline-size: 368px;
+  }
+
+  .summary {
+    max-inline-size: 368px;
+  }
+}
+
